@@ -33,5 +33,19 @@ describe 'Describes owner_repo' do
       init_teams
       expect(original([create_owner], same_name)).to be false
     end
+    context 'authentic process' do
+      after :each do
+        File.delete("./config/.yml")
+      end
+      it 'should return success in creating team' do
+        init_teams
+        expect { menu_create_team_process(0, diff_name, [create_owner]) }.to output("team was successfully added\n").to_stdout
+      end
+
+      it 'should return success in changing teams name' do
+        init_teams
+        expect { menu_change_team_name_process( 0, 0, diff_name, [create_owner]) }.to output("team name was successfully changed to winnerTeam\n").to_stdout
+      end
+    end
   end
 end
