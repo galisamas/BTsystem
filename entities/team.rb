@@ -1,11 +1,11 @@
-require './coach.rb'
+require './entities/coach.rb'
 
 # This is Team class
 class Team
-  def initialize(name, owner, establishment = Date.new)
+  def initialize(name, owner)
     @name = name
     @owner = owner
-    @establishment = establishment
+    @establishment = Date.today
     @coaches = []
   end
 

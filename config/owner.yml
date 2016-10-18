@@ -1,0 +1,29 @@
+---
+- &1 !ruby/object:Owner
+  name: A
+  last_name: a
+  gender: male
+  contact: !ruby/object:Contact
+    phone: ''
+    email: a@a.com
+  my_teams:
+  - !ruby/object:Team
+    name: team888
+    owner: *1
+    establishment: 2016-10-18
+    coaches: []
+  - !ruby/object:Team
+    name: superDuper
+    owner: *1
+    establishment: 2016-10-18
+    coaches: []
+  - !ruby/object:Team
+    name: superTeam
+    owner: *1
+    establishment: 2016-10-18
+    coaches: []
+  - !ruby/object:Team
+    name: Silute
+    owner: *1
+    establishment: 2016-10-18
+    coaches: []

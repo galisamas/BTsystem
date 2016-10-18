@@ -1,4 +1,4 @@
-require './person.rb'
+require './entities/person.rb'
 
 # This is Coach class
 class Coach < Person
