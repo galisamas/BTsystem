@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-18T23:13:34+03:00">2016-10-18T23:13:34+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-19T00:48:10+03:00">2016-10-19T00:48:10+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.51
+         3.1
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>8</b> files in total.
-    <b>137</b> relevant lines. 
-    <span class="green"><b>137</b> lines covered</span> and
+    <b>150</b> relevant lines. 
+    <span class="green"><b>150</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>12</td>
         <td>12</td>
         <td>0</td>
-        <td>5.8</td>
+        <td>7.2</td>
       </tr>
       
       <tr>
@@ -97,17 +97,17 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>4.0</td>
+        <td>6.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f071b53828802901f4e9c6f5feb0a99fb6427e56" class="src_link" title="repo/owner_repo.rb">repo/owner_repo.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>10</td>
-        <td>10</td>
+        <td>39</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -268,14 +268,14 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="6">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="6">
+          <span class="hits">19</span>
           
           <code class="ruby">    @phone = &#39;&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="7">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="7">
+          <span class="hits">19</span>
           
           <code class="ruby">    @email = &#39;&#39;</code>
         </li>
@@ -412,14 +412,14 @@
           <code class="ruby">  def initialize(name, last_name, gender)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="8">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="17" data-linenumber="8">
+          <span class="hits">17</span>
           
           <code class="ruby">    super(name, last_name, gender)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="9">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="17" data-linenumber="9">
+          <span class="hits">17</span>
           
           <code class="ruby">    @my_teams = []</code>
         </li>
@@ -490,8 +490,8 @@
           <code class="ruby">  def create_team(team_name)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="21">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="19" data-linenumber="21">
+          <span class="hits">19</span>
           
           <code class="ruby">    @my_teams &lt;&lt; Team.new(team_name, self)</code>
         </li>
@@ -538,8 +538,8 @@
           <code class="ruby">  def change_team_name(old_name, new_name)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
           
           <code class="ruby">    get_team_by_name(old_name).name = new_name</code>
         </li>
@@ -646,14 +646,14 @@
           <code class="ruby">  def get_team_by_name(name)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="47">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="8" data-linenumber="47">
+          <span class="hits">8</span>
           
           <code class="ruby">    index = @my_teams.find_index { |team| team.name == name }</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="48">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="48">
+          <span class="hits">4</span>
           
           <code class="ruby">    @my_teams[index]</code>
         </li>
@@ -718,26 +718,26 @@
           <code class="ruby">  def initialize(name, last_name, gender)</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="6">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="6">
+          <span class="hits">19</span>
           
           <code class="ruby">    @name = name</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="7">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="7">
+          <span class="hits">19</span>
           
           <code class="ruby">    @last_name = last_name</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="8">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="8">
+          <span class="hits">19</span>
           
           <code class="ruby">    @gender = gender</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="9">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="19" data-linenumber="9">
+          <span class="hits">19</span>
           
           <code class="ruby">    @contact = Contact.new</code>
         </li>
@@ -856,26 +856,26 @@
           <code class="ruby">  def initialize(name, owner)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="6">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="20" data-linenumber="6">
+          <span class="hits">20</span>
           
           <code class="ruby">    @name = name</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="7">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="20" data-linenumber="7">
+          <span class="hits">20</span>
           
           <code class="ruby">    @owner = owner</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="8">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="20" data-linenumber="8">
+          <span class="hits">20</span>
           
           <code class="ruby">    @establishment = Date.today</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="9">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="20" data-linenumber="9">
+          <span class="hits">20</span>
           
           <code class="ruby">    @coaches = []</code>
         </li>
@@ -898,8 +898,8 @@
           <code class="ruby">  def name=(new_name)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
           <code class="ruby">    @name = new_name unless new_name.empty?</code>
         </li>
@@ -979,8 +979,8 @@
     <h3>repo/owner_repo.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1030,8 +1030,8 @@
           <code class="ruby">def save_owners(owners, filename)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">  File.open(&quot;./config/#{filename}.yml&quot;, &#39;w&#39;) {|file| file.write(YAML::dump(owners))}</code>
         </li>
@@ -1054,20 +1054,20 @@
           <code class="ruby">def original(owners, name)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="6" data-linenumber="12">
+          <span class="hits">6</span>
           
           <code class="ruby">  owners.each do |user|</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="15" data-linenumber="13">
+          <span class="hits">15</span>
           
           <code class="ruby">    if user.my_teams.any?{|team| team.name == name}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">      return false</code>
         </li>
@@ -1084,13 +1084,139 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
           
           <code class="ruby">  true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">@owner_filename = &#39;owner&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def menu_create_team_process(index, name, users)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  if original(users, name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    users[index].create_team(name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    save_owners(users, @owner_filename)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    puts &#39;team was successfully added&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    puts &quot;team name #{name} already exist&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def menu_change_team_name_process(chosen_nr, index, new_name, users)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  if original(users, new_name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    users[index].change_team_name(users[index].my_teams[chosen_nr.to_i].name, new_name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    save_owners(users, @owner_filename)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    puts &quot;team name was successfully changed to #{new_name}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    puts &quot;team name #{new_name} already exist&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>

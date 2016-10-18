@@ -1,7 +1,6 @@
 require './entities/owner.rb'
 require './repo/owner_repo.rb'
 
-owner_filename = 'owner'
 def menu_email(users, index)
   begin
     puts 'type new email:'
@@ -37,13 +36,7 @@ end
 def menu_create_team(users, index)
   puts 'type team name:'
   name = gets.chomp
-  if original(users, name)
-    users[index].create_team(name)
-    save_owners(users, owner_filename)
-    puts 'team was successfully added'
-  else
-    puts "team name #{name} already exist"
-  end
+  menu_create_team_process(index, name, users)
 end
 
 def menu_change_team_name(users, index)
@@ -53,12 +46,5 @@ def menu_change_team_name(users, index)
   chosen_nr = gets.chomp
   puts 'your new name:'
   new_name = gets.chomp
-  if original(users, new_name)
-    users[index].change_team_name(users[index].my_teams[chosen_nr.to_i].name, new_name)
-    save_owners(users, owner_filename)
-    puts "team name was successfully changed to #{new_name}"
-  else
-    puts "team name #{new_name} already exist"
-  end
-
+  menu_change_team_name_process(chosen_nr, index, new_name, users)
 end
