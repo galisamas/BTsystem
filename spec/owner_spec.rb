@@ -42,23 +42,23 @@ describe Owner do
     end
 
     it 'has no email' do
-      create_owner.email = incorect_email
-      expect(create_owner.email).to eql('')
+      create_owner.set_email(incorect_email)
+      expect(create_owner.contact.email).to eql('')
     end
 
     it 'has a@a.com email' do
-      create_owner.email = correct_email
-      expect(create_owner.email).to eql(correct_email)
+      create_owner.set_email(correct_email)
+      expect(create_owner.contact.email).to eql(correct_email)
     end
 
     it 'has no phone number' do
-      create_owner.phone = incorrect_phone
-      expect(create_owner.phone).to eql('')
+      create_owner.set_phone(incorrect_phone)
+      expect(create_owner.contact.phone).to eql('')
     end
 
     it 'has +370 111 11111 number' do
-      create_owner.phone = correct_phone
-      expect(create_owner.phone).to eql(correct_phone)
+      create_owner.set_phone(correct_phone)
+      expect(create_owner.contact.phone).to eql(correct_phone)
     end
   end
 
