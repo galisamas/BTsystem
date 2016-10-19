@@ -8,7 +8,7 @@
     email: a@a.com
   my_teams:
   - !ruby/object:Team
-    name: team888
+    name: Ultras
     owner: *1
     establishment: 2016-10-18
     coaches: []
@@ -18,7 +18,7 @@
     establishment: 2016-10-18
     coaches: []
   - !ruby/object:Team
-    name: superTeam
+    name: Rasa
     owner: *1
     establishment: 2016-10-18
     coaches: []
@@ -26,4 +26,9 @@
     name: Silute
     owner: *1
     establishment: 2016-10-18
+    coaches: []
+  - !ruby/object:Team
+    name: Bala
+    owner: *1
+    establishment: 2016-10-19
     coaches: []

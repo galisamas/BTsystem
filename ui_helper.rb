@@ -56,10 +56,11 @@ def menu_hire_coach(users, index)
   puts 'Where to hire coach?'
   chosen_team = gets.chomp
   coaches = get_all('coach')
+  nr = -1
   coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
   puts 'Which one?'
   chosen_coach = gets.chomp
-  menu_hire_coach_process(users, index, coaches, chosen_coach, chosen_team)
+  menu_hire_coach_process(users, index, coaches, chosen_coach.to_i, chosen_team.to_i)
 end
 
 

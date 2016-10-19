@@ -15,10 +15,21 @@ class Team
   attr_reader :name, :coaches, :owner, :establishment
 
   def add_coach(coach)
-    @coaches << coach
+    @coaches << coach if original(@coaches, coach.name)
   end
 
   def coach_count
     @coaches.length
+  end
+
+  private
+
+  def original(coaches, name)
+    coaches.each do |coach|
+      if coach.name == name
+        return false
+      end
+    end
+    true
   end
 end
