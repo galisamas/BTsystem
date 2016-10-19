@@ -24,7 +24,7 @@ describe 'Describes yaml_repo' do
       create_owner.create_team('team2')
     }
     let(:init_coach) { Coach.new('coach1', 'coach', 'female') }
-    let(:init_player) { Player.new('player1', 'player', 'female') }
+    let(:init_player) { Player.new('player1', 'player', 'female', 99) }
 
     after :all do
       File.delete("./config/.yml")

@@ -64,6 +64,7 @@ describe Owner do
 
   context 'team roster' do
     let(:create_coach) { Coach.new('1', '1', 'female') }
+    let(:create_player) { Player.new('1', '1', 'female', 99) }
 
     it 'hire new coach' do
       create_team_to_owner
@@ -76,6 +77,19 @@ describe Owner do
       create_owner.hire_coach(team_old_name, create_coach)
       create_owner.fire_coach(team_old_name, 0)
       expect(create_owner.team_coach_count(team_old_name)).to be(0)
+    end
+
+    it 'hire new player' do
+      create_team_to_owner
+      create_owner.hire_player(team_old_name, create_player)
+      expect(create_owner.team_player_count(team_old_name)).to be(1)
+    end
+
+    it 'fire player' do
+      create_team_to_owner
+      create_owner.hire_player(team_old_name, create_player)
+      create_owner.fire_player(team_old_name, 0)
+      expect(create_owner.team_player_count(team_old_name)).to be(0)
     end
   end
 end
