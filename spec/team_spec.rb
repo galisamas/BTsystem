@@ -13,4 +13,10 @@ describe Team do
     init_team.add_coach(init_coach)
     expect(init_team.coach_count).to be(1)
   end
+
+  it 'still has 1 coach' do
+    init_team.add_coach(init_coach)
+    init_team.add_coach(init_coach)
+    expect(init_team.coach_count).to be(1)
+  end
 end

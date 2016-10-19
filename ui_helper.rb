@@ -61,3 +61,5 @@ def menu_hire_coach(users, index)
   chosen_coach = gets.chomp
   menu_hire_coach_process(users, index, coaches, chosen_coach, chosen_team)
 end
+
+
