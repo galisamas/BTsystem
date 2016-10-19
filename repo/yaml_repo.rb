@@ -78,7 +78,7 @@ def menu_hire_player_process(users, index, players, chosen_player, chosen_team)
     save_all(users, @owner_filename)
     puts "#{player_name} was successfully hired"
   else
-    puts "#{players[chosen_player].name} is already #{team_name}'s coach"
+    puts "#{players[chosen_player].name} is already #{team_name}'s player"
   end
 end
 
@@ -86,7 +86,7 @@ def menu_fire_player_process(users, index, players, chosen_player, chosen_team)
   old_size = users[index].my_teams[chosen_team].players.size
   team_name = users[index].my_teams[chosen_team].name
   deteled_player = users[index].my_teams[chosen_team].players[chosen_player]
-  users[index].fire_players(team_name, chosen_player)
+  users[index].fire_player(team_name, chosen_player)
   players.push(deteled_player)
   save_all(players, @player_filename)
   save_all(users, @owner_filename)

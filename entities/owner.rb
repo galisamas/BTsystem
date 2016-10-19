@@ -45,6 +45,18 @@ class Owner < Person
     get_team_by_name(team_name).coach_count
   end
 
+  def hire_player(team_name, player)
+    get_team_by_name(team_name).add_player(player)
+  end
+
+  def fire_player(team_name, index)
+    get_team_by_name(team_name).delete_player_at(index)
+  end
+
+  def team_player_count(team_name)
+    get_team_by_name(team_name).player_count
+  end
+
   private
 
   def get_team_by_name(name)
