@@ -37,6 +37,10 @@ class Owner < Person
     get_team_by_name(team_name).add_coach(coach)
   end
 
+  def fire_coach(team_name, index)
+    get_team_by_name(team_name).delete_at(index)
+  end
+
   def team_coach_count(team_name)
     get_team_by_name(team_name).coach_count
   end
