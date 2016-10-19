@@ -6,5 +6,5 @@ class Coach < Person
     super(name, last_name, gender)
     @level = level
   end
-  attr_reader :level # attr_accessor
+  attr_reader :level
 end

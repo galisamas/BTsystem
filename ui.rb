@@ -45,7 +45,9 @@ while true do
     when '6' # Hire coach
       menu_hire_coach(owners, index)
     when '7' # Hire team member
+      menu_hire_player(owners, index)
     when '8' # Fire team member
+      menu_fire_player(owners, index)
     when '9' # Fire coach
       menu_fire_coach(owners, index)
     when '10' # Change coach status

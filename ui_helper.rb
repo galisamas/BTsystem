@@ -83,3 +83,10 @@ def menu_fire_coach(users, index)
   end
 end
 
+def menu_hire_player(users, index)
+
+end
+
+def menu_fire_player(users, index)
+
+end

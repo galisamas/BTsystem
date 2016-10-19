@@ -46,7 +46,7 @@ def menu_hire_coach_process(users, index, coaches, chosen_coach, chosen_team)
   users[index].hire_coach(team_name, coaches[chosen_coach])
   if(old_size < users[index].my_teams[chosen_team].coaches.size)
     coach_name = coaches[chosen_coach].name
-    coaches.delete_at(chosen_coach)
+    coaches.delete_coach_at(chosen_coach)
     save_all(coaches, @coach_filename)
     save_all(users, @owner_filename)
     puts "#{coach_name} was successfully hired"

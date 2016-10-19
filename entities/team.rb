@@ -18,7 +18,7 @@ class Team
     @coaches << coach if original(@coaches, coach.name)
   end
 
-  def delete_at(index)
+  def delete_coach_at(index)
     @coaches.delete_at(index)
   end
 
