@@ -61,11 +61,17 @@ describe 'Describes yaml_repo' do
     end
 
     context 'hiring coach to team' do
-      let(:init_coach) { [Coach.new('coach1', 'coach', 'female')] }
+      let(:init_coach) { Coach.new('coach1', 'coach', 'female') }
 
       it 'hires team successfully' do
         init_teams
         expect(menu_hire_coach_process([create_owner], 0, init_coach, 0, 1)).to output("coach1 was successfully hired\n").to_stdout
+      end
+
+      it 'team hiring failed' do
+        init_teams
+        create_owner.hire_coach('team2', init_coach)
+        expect(menu_hire_coach_process([create_owner], 0, [init_coach], 0, 1)).to output("coach1 is already team2's coach\n").to_stdout
       end
     end
   end
