@@ -75,7 +75,7 @@ describe Owner do
       create_team_to_owner
       create_owner.hire_coach(team_old_name, create_coach)
       create_owner.fire_coach(team_old_name, 0)
-      expect(create_owner.team_coach_count(team_old_name)).to be_empty
+      expect(create_owner.team_coach_count(team_old_name)).to be(0)
     end
   end
 end

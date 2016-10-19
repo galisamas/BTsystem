@@ -23,6 +23,6 @@ describe Team do
   it 'should have 0 coach after deleting 1' do
     init_team.add_coach(init_coach)
     init_team.delete_at(0)
-    expect(init_team.coach_count).to be_empty
+    expect(init_team.coach_count).to be(0)
   end
 end

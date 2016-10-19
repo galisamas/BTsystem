@@ -81,12 +81,7 @@ describe 'Describes yaml_repo' do
       it 'fires coach successfully' do
         init_teams
         create_owner.hire_coach('team2', init_coach)
-        expect { menu_fire_coach_process([create_owner], 0, [], 0, 1) }.to output("coach1 was successfully hired\n").to_stdout
-      end
-
-      it 'coach firing failed' do
-        init_teams
-        expect { menu_fire_coach_process([create_owner], 0, [], 0, 1) }.to output("coach1 is not in the team2\n").to_stdout
+        expect { menu_fire_coach_process([create_owner], 0, [], 0, 1) }.to output("coach1 was successfully fired\n").to_stdout
       end
     end
   end

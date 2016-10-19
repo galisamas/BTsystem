@@ -60,13 +60,8 @@ def menu_fire_coach_process(users, index, coaches, chosen_coach, chosen_team)
   team_name = users[index].my_teams[chosen_team].name
   deteled_coach = users[index].my_teams[chosen_team].coaches[chosen_coach]
   users[index].fire_coach(team_name, chosen_coach)
-  if(old_size > users[index].my_teams[chosen_team].coaches.size)
-    coach_name = coaches[chosen_coach].name
-    coaches.push(deteled_coach)
-    save_all(coaches, @coach_filename)
-    save_all(users, @owner_filename)
-    puts "#{coach_name} was successfully fired"
-  else
-    puts "#{coaches[chosen_coach].name} is not in the #{team_name}"
-  end
+  coaches.push(deteled_coach)
+  save_all(coaches, @coach_filename)
+  save_all(users, @owner_filename)
+  puts "#{deteled_coach.name} was successfully fired"
 end
