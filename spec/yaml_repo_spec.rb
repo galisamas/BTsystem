@@ -1,11 +1,11 @@
 require './spec/spec_helper.rb'
 
-describe 'Describes owner_repo' do
+describe 'Describes yaml_repo' do
   let(:create_owner) { Owner.new('A', 'a', 'male') }
 
-  context 'owner.yml file is overridden' do
+  context '.yml file' do
     let(:filename) { 'test' }
-    let(:save_info) { save_owners(create_owner, filename) }
+    let(:save_info) { save_all(create_owner, filename) }
     after :each do
       File.delete("./config/#{filename}.yml")
     end
@@ -16,7 +16,7 @@ describe 'Describes owner_repo' do
     end
   end
 
-  context 'Passed team name is original' do
+  context 'load owner with teams' do
     let(:same_name) { 'team1' }
     let(:diff_name) { 'winnerTeam' }
     let(:init_teams) {
@@ -33,10 +33,12 @@ describe 'Describes owner_repo' do
       init_teams
       expect(original([create_owner], same_name)).to be false
     end
+
     context 'authentic process' do
       after :all do
         File.delete("./config/.yml")
       end
+
       it 'should return success in creating team' do
         init_teams
         expect { menu_create_team_process(0, diff_name, [create_owner]) }.to output("team was successfully added\n").to_stdout
@@ -57,5 +59,15 @@ describe 'Describes owner_repo' do
         expect { menu_change_team_name_process( 0, 0, same_name, [create_owner]) }.to output("team name team1 already exist\n").to_stdout
       end
     end
+
+    context 'hiring coach to team' do
+      let(:init_coach) { [Coach.new('coach1', 'coach', 'female')] }
+
+      it 'hires team successfully' do
+        init_teams
+        expect(menu_hire_coach_process([create_owner], 0, init_coach, 0, 1)).to output("coach1 was successfully hired\n").to_stdout
+      end
+    end
   end
+
 end

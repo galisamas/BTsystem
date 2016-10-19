@@ -1,4 +1,4 @@
-require './repo/owner_repo.rb'
+require './repo/yaml_repo.rb'
 require './entities/owner.rb'
 require './ui_helper.rb'
 
@@ -43,6 +43,7 @@ while true do
     when '5' # Change team name
       menu_change_team_name(owners, index)
     when '6' # Hire coach
+      menu_hire_coach(owners, index)
     when '7' # Hire team member
     when '8' # Fire team member
     when '9' # Fire coach

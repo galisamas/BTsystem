@@ -1,5 +1,5 @@
 require './entities/owner.rb'
-require './repo/owner_repo.rb'
+require './repo/yaml_repo.rb'
 
 def menu_email(users, index)
   begin
@@ -11,7 +11,7 @@ def menu_email(users, index)
       break if gets.chomp != 'y'
     else
       puts 'email is correct'
-      save_owners(users, owner_filename)
+      save_all(users, owner_filename)
       break
     end
   end while true
@@ -27,7 +27,7 @@ def menu_phone(users, index)
       break if gets.chomp != 'y'
     else
       puts 'phone is correct'
-      save_owners(users, owner_filename)
+      save_all(users, owner_filename)
       break
     end
   end while true
@@ -47,4 +47,17 @@ def menu_change_team_name(users, index)
   puts 'your new name:'
   new_name = gets.chomp
   menu_change_team_name_process(chosen_nr, index, new_name, users)
+end
+
+def menu_hire_coach(users, index)
+  nr = -1
+  puts 'Your teams'
+  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+  puts 'Where to hire coach?'
+  chosen_team = gets.chomp
+  coaches = get_all('coach')
+  coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
+  puts 'Which one?'
+  chosen_coach = gets.chomp
+  menu_hire_coach_process(users, index, coaches, chosen_coach, chosen_team)
 end
