@@ -11,7 +11,12 @@
     name: Ultras
     owner: *1
     establishment: 2016-10-18
-    coaches: []
+    coaches:
+    - !ruby/object:Coach
+      name: C
+      last_name: c
+      gender: male
+      level: assistant
   - !ruby/object:Team
     name: superDuper
     owner: *1

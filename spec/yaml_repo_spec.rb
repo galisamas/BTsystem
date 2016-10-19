@@ -23,6 +23,7 @@ describe 'Describes yaml_repo' do
       create_owner.create_team('team1')
       create_owner.create_team('team2')
     }
+    let(:init_coach) { Coach.new('coach1', 'coach', 'female') }
 
     after :all do
       File.delete("./config/.yml")
@@ -39,6 +40,7 @@ describe 'Describes yaml_repo' do
     end
 
     context 'authentic process' do
+
       it 'should return success in creating team' do
         init_teams
         expect { menu_create_team_process(0, diff_name, [create_owner]) }.to output("team was successfully added\n").to_stdout
@@ -61,19 +63,31 @@ describe 'Describes yaml_repo' do
     end
 
     context 'hiring coach to team' do
-      let(:init_coach) { Coach.new('coach1', 'coach', 'female') }
 
-      it 'hires team successfully' do
+      it 'hires coach successfully' do
         init_teams
         expect { menu_hire_coach_process([create_owner], 0, [init_coach], 0, 1) }.to output("coach1 was successfully hired\n").to_stdout
       end
 
-      it 'team hiring failed' do
+      it 'coach hiring failed' do
         init_teams
         create_owner.hire_coach('team2', init_coach)
         expect { menu_hire_coach_process([create_owner], 0, [init_coach], 0, 1) }.to output("coach1 is already team2's coach\n").to_stdout
       end
     end
-  end
 
+    context 'firing coach' do
+
+      it 'fires coach successfully' do
+        init_teams
+        expect { menu_fire_coach_process([create_owner], 0, [init_coach], 0, 1) }.to output("coach1 was successfully hired\n").to_stdout
+      end
+
+      it 'coach firing failed' do
+        init_teams
+        create_owner.hire_coach('team2', init_coach)
+        expect { menu_fire_coach_process([create_owner], 0, [init_coach], 0, 1) }.to output("coach1 is already team2's coach\n").to_stdout
+      end
+    end
+  end
 end

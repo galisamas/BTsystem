@@ -49,13 +49,14 @@ def menu_change_team_name(users, index)
   menu_change_team_name_process(chosen_nr, index, new_name, users)
 end
 
+@coach_filename = 'coach'
 def menu_hire_coach(users, index)
   nr = -1
   puts 'Your teams'
   users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
-  puts 'Where to hire coach?'
+  puts 'Choose team number?'
   chosen_team = gets.chomp
-  coaches = get_all('coach')
+  coaches = get_all(@coach_filename)
   nr = -1
   coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
   puts 'Which one?'
@@ -63,4 +64,22 @@ def menu_hire_coach(users, index)
   menu_hire_coach_process(users, index, coaches, chosen_coach.to_i, chosen_team.to_i)
 end
 
+def menu_fire_coach(users, index)
+  nr = -1
+  puts 'Your teams'
+  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+  puts 'Choose team number?'
+  chosen_team = gets.chomp
+  choaches = users[index].my_teams[chosen_team.to_i].coaches
+  if(choaches.empty?)
+    puts 'No coaches in this team'
+  else
+    nr = -1
+    choaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
+    puts 'Which one?'
+    chosen_coach = gets.chomp
+    coaches = get_all(@coach_filename)
+    menu_fire_coach_process(users, index, coaches, chosen_coach.to_i, chosen_team.to_i)
+  end
+end
 

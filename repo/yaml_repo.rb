@@ -48,6 +48,7 @@ def menu_hire_coach_process(users, index, coaches, chosen_coach, chosen_team)
     coach_name = coaches[chosen_coach].name
     coaches.delete_at(chosen_coach)
     save_all(coaches, @coach_filename)
+    save_all(users, @owner_filename)
     puts "#{coach_name} was successfully hired"
   else
     puts "#{coaches[chosen_coach].name} is already #{team_name}'s coach"

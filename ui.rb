@@ -47,7 +47,9 @@ while true do
     when '7' # Hire team member
     when '8' # Fire team member
     when '9' # Fire coach
+      menu_fire_coach(owners, index)
     when '10' # Change coach status
+      # menu_change_coach_status(owners, index)
     when '11' # Send message
     when '12' # See messages
     when '0' # Exit
