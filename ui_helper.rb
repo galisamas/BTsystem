@@ -52,17 +52,21 @@ end
 @coach_filename = 'coach'
 @player_filename = 'player'
 def menu_hire_coach(users, index)
-  nr = -1
-  puts 'Your teams'
-  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
-  puts 'Choose team number?'
-  chosen_team = gets.chomp
   coaches = get_all(@coach_filename)
-  nr = -1
-  coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
-  puts 'Which one?'
-  chosen_coach = gets.chomp
-  menu_hire_coach_process(users, index, coaches, chosen_coach.to_i, chosen_team.to_i)
+  unless coaches.empty?
+    nr = -1
+    puts 'Your teams'
+    users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+    puts 'Choose team number?'
+    chosen_team = gets.chomp
+    nr = -1
+    coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
+    puts 'Which one?'
+    chosen_coach = gets.chomp
+    menu_hire_coach_process(users, index, coaches, chosen_coach.to_i, chosen_team.to_i)
+  else
+    puts 'Nothing to hire'
+  end
 end
 
 def menu_fire_coach(users, index)
@@ -72,7 +76,7 @@ def menu_fire_coach(users, index)
   puts 'Choose team number?'
   chosen_team = gets.chomp
   choaches = users[index].my_teams[chosen_team.to_i].coaches
-  if(choaches.empty?)
+  if choaches.empty?
     puts 'No coaches in this team'
   else
     nr = -1
@@ -85,17 +89,21 @@ def menu_fire_coach(users, index)
 end
 
 def menu_hire_player(users, index)
-  nr = -1
-  puts 'Your teams'
-  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
-  puts 'Choose team number?'
-  chosen_team = gets.chomp
   players = get_all(@player_filename)
-  nr = -1
-  players.each { |player| puts "#{nr += 1}. #{player.name}" }
-  puts 'Which one?'
-  chosen_player = gets.chomp
-  menu_hire_player_process(users, index, players, chosen_player.to_i, chosen_team.to_i)
+  unless players.empty?
+    nr = -1
+    puts 'Your teams'
+    users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+    puts 'Choose team number?'
+    chosen_team = gets.chomp
+    nr = -1
+    players.each { |player| puts "#{nr += 1}. #{player.name}" }
+    puts 'Which one?'
+    chosen_player = gets.chomp
+    menu_hire_player_process(users, index, players, chosen_player.to_i, chosen_team.to_i)
+  else
+    puts 'Nothing to hire'
+  end
 end
 
 def menu_fire_player(users, index)
@@ -105,7 +113,7 @@ def menu_fire_player(users, index)
   puts 'Choose team number?'
   chosen_team = gets.chomp
   players = users[index].my_teams[chosen_team.to_i].players
-  if(players.empty?)
+  if players.empty?
     puts 'No players in this team'
   else
     nr = -1
@@ -117,22 +125,26 @@ def menu_fire_player(users, index)
   end
 end
 
-def menu_change_coach_level(owners, index)
+def menu_change_coach_level(users, index)
   levels = [ 'head', 'second', 'assistant', 'scout' ]
   nr = -1
   puts 'Your teams'
   users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
   puts 'Choose team number?'
   chosen_team = gets.chomp
-  choaches = users[index].my_teams[chosen_team.to_i].coaches
-  nr = -1
-  coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
-  puts 'Which one?'
-  chosen_coach = gets.chomp
-  nr = -1
-  levels.each { |level| puts "#{nr += 1}. #{level.name}" }
-  puts 'Choose level?'
-  chosen_level = gets.chomp
-  level = levels[chosen_level]
-  menu_change_coach_level_process(users, index, chosen_coach.to_i, chosen_team.to_i, level)
+  coaches = users[index].my_teams[chosen_team.to_i].coaches
+  unless coaches.empty?
+    nr = -1
+    coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
+    puts 'Which one?'
+    chosen_coach = gets.chomp
+    nr = -1
+    levels.each { |level| puts "#{nr += 1}. #{level}" }
+    puts 'Choose level?'
+    chosen_level = gets.chomp
+    level = levels[chosen_level.to_i]
+    menu_change_coach_level_process(users, index, chosen_coach.to_i, chosen_team.to_i, level)
+  else
+    puts 'No coaches in this team'
+  end
 end

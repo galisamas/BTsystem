@@ -11,7 +11,13 @@
     name: Ultras
     owner: *1
     establishment: 2016-10-18
-    coaches: []
+    coaches:
+    - !ruby/object:Coach
+      name: D
+      last_name: d
+      gender: male
+      level: assistant
+    players: []
   - !ruby/object:Team
     name: superDuper
     owner: *1
@@ -22,18 +28,22 @@
       last_name: c
       gender: male
       level: assistant
+    players: []
   - !ruby/object:Team
     name: Rasa
     owner: *1
     establishment: 2016-10-18
     coaches: []
+    players: []
   - !ruby/object:Team
     name: Silute
     owner: *1
     establishment: 2016-10-18
     coaches: []
+    players: []
   - !ruby/object:Team
     name: Bala
     owner: *1
     establishment: 2016-10-19
     coaches: []
+    players: []

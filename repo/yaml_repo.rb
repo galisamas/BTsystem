@@ -93,3 +93,12 @@ def menu_fire_player_process(users, index, players, chosen_player, chosen_team)
   puts "#{deteled_player.name} was successfully fired"
 end
 
+def menu_change_coach_level_process(users, index, chosen_coach, chosen_team, level)
+  old = users[index].my_teams[chosen_team].coaches[chosen_coach].level
+  if(old.eql? level)
+    puts "#{level} level was the same"
+  else
+    users[index].my_teams[chosen_team].coaches[chosen_coach].level = level
+    puts 'level was changed successfully'
+  end
+end
