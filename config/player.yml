@@ -1,0 +1,6 @@
+---
+- !ruby/object:Player
+  name: Donatas
+  last_name: Sabonis
+  gender: male
+  tshirt_n: 77

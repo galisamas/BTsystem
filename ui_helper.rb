@@ -50,6 +50,7 @@ def menu_change_team_name(users, index)
 end
 
 @coach_filename = 'coach'
+@player_filename = 'player'
 def menu_hire_coach(users, index)
   nr = -1
   puts 'Your teams'
@@ -84,9 +85,34 @@ def menu_fire_coach(users, index)
 end
 
 def menu_hire_player(users, index)
-
+  nr = -1
+  puts 'Your teams'
+  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+  puts 'Choose team number?'
+  chosen_team = gets.chomp
+  players = get_all(@player_filename)
+  nr = -1
+  players.each { |player| puts "#{nr += 1}. #{player.name}" }
+  puts 'Which one?'
+  chosen_player = gets.chomp
+  menu_hire_player_process(users, index, players, chosen_player.to_i, chosen_team.to_i)
 end
 
 def menu_fire_player(users, index)
-
+  nr = -1
+  puts 'Your teams'
+  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+  puts 'Choose team number?'
+  chosen_team = gets.chomp
+  players = users[index].my_teams[chosen_team.to_i].players
+  if(players.empty?)
+    puts 'No players in this team'
+  else
+    nr = -1
+    players.each { |player| puts "#{nr += 1}. #{player.name}" }
+    puts 'Which one?'
+    chosen_player = gets.chomp
+    players = get_all(@player_filename)
+    menu_fire_player_process(users, index, players, chosen_player.to_i, chosen_team.to_i)
+  end
 end

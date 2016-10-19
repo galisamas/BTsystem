@@ -24,6 +24,7 @@ describe 'Describes yaml_repo' do
       create_owner.create_team('team2')
     }
     let(:init_coach) { Coach.new('coach1', 'coach', 'female') }
+    let(:init_player) { Player.new('player1', 'player', 'female') }
 
     after :all do
       File.delete("./config/.yml")
@@ -82,6 +83,29 @@ describe 'Describes yaml_repo' do
         init_teams
         create_owner.hire_coach('team2', init_coach)
         expect { menu_fire_coach_process([create_owner], 0, [], 0, 1) }.to output("coach1 was successfully fired\n").to_stdout
+      end
+    end
+
+    context 'hiring player to team' do
+
+      it 'hires player successfully' do
+        init_teams
+        expect { menu_hire_player_process([create_owner], 0, [init_player], 0, 1) }.to output("player1 was successfully hired\n").to_stdout
+      end
+
+      it 'player hiring failed' do
+        init_teams
+        create_owner.hire_player('team2', init_player)
+        expect { menu_hire_player_process([create_owner], 0, [init_player], 0, 1) }.to output("player1 is already team2's player\n").to_stdout
+      end
+    end
+
+    context 'firing player' do
+
+      it 'fires coach successfully' do
+        init_teams
+        create_owner.hire_player('team2', init_player)
+        expect { menu_fire_player_process([create_owner], 0, [], 0, 1) }.to output("player1 was successfully fired\n").to_stdout
       end
     end
   end
