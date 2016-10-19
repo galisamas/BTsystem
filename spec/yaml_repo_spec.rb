@@ -108,5 +108,20 @@ describe 'Describes yaml_repo' do
         expect { menu_fire_player_process([create_owner], 0, [], 0, 1) }.to output("player1 was successfully fired\n").to_stdout
       end
     end
+
+    context 'changing coach level' do
+
+      it 'should change to head level successfully' do
+        init_teams
+        create_owner.hire_coach('team2', init_coach)
+        expect { menu_change_coach_level_process([create_owner], 0, 0, 1, 'head') }.to output("level was changed successfully\n").to_stdout
+      end
+
+      it 'should fail in changing level' do
+        init_teams
+        create_owner.hire_coach('team2', init_coach)
+        expect { menu_change_coach_level_process([create_owner], 0, 0, 1, 'assistant') }.to output("assistant level was the same\n").to_stdout
+      end
+    end
   end
 end

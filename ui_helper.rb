@@ -116,3 +116,23 @@ def menu_fire_player(users, index)
     menu_fire_player_process(users, index, players, chosen_player.to_i, chosen_team.to_i)
   end
 end
+
+def menu_change_coach_level(owners, index)
+  levels = [ 'head', 'second', 'assistant', 'scout' ]
+  nr = -1
+  puts 'Your teams'
+  users[index].my_teams.each { |team| puts "#{nr += 1}. #{team.name}" }
+  puts 'Choose team number?'
+  chosen_team = gets.chomp
+  choaches = users[index].my_teams[chosen_team.to_i].coaches
+  nr = -1
+  coaches.each { |coach| puts "#{nr += 1}. #{coach.name}" }
+  puts 'Which one?'
+  chosen_coach = gets.chomp
+  nr = -1
+  levels.each { |level| puts "#{nr += 1}. #{level.name}" }
+  puts 'Choose level?'
+  chosen_level = gets.chomp
+  level = levels[chosen_level]
+  menu_change_coach_level_process(users, index, chosen_coach.to_i, chosen_team.to_i, level)
+end

@@ -24,9 +24,7 @@ while true do
   puts '7. Hire team member'
   puts '8. Fire team member'
   puts '9. Fire coach'
-  puts '10. Change coach status'
-  puts '11. Send message'
-  puts '12. See messages'
+  puts '10. Change coach level'
   puts '0. Exit'
 
   menu_index = gets.chomp
@@ -50,10 +48,8 @@ while true do
       menu_fire_player(owners, index)
     when '9' # Fire coach
       menu_fire_coach(owners, index)
-    when '10' # Change coach status
-      # menu_change_coach_status(owners, index)
-    when '11' # Send message
-    when '12' # See messages
+    when '10' # Change coach level
+      menu_change_coach_level(owners, index)
     when '0' # Exit
       exit
     else
